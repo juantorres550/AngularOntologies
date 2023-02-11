@@ -1,0 +1,20 @@
+<h2>Por autor</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <app-term-input
+            (onEnter)="buscar( $event )"
+            placeholder="Buscar autor..."
+        >
+        </app-term-input>
+    </div>
+</div>
+<div *ngIf="tError" 
+    class="alert alert-danger">
+    No se encontro nada con el termino '{{term}}'
+</div>
+<div *ngIf="info.length>0" class="row">
+    <div class="col">
+        <app-term-resp [words]="arr"></app-term-resp>
+    </div>
+</div>

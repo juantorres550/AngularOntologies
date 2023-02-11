@@ -1,0 +1,18 @@
+<mat-card *ngFor="let word of words" class="c">
+    <mat-card-header>
+        <mat-card-title>{{word.title}}</mat-card-title>
+        <mat-card-subtitle>{{word.autor}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="content">
+        <p>
+            <strong>ID: </strong>{{word.PMID}}
+            <br>
+            <strong>Año: </strong>{{word.year}}
+            <br>
+            <strong>Citas: </strong>{{word.cite}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions class="content">
+        <button mat-mini-fab color="primary" [routerLink]="['/term', word.PMID]"><mat-icon>open_in_new</mat-icon></button>
+    </mat-card-actions>
+</mat-card>

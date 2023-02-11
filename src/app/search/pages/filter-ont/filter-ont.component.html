@@ -1,0 +1,32 @@
+<h2>Por Ontología</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <form [formGroup]="form" (ngSubmit)="buscar(myForm)" #myForm="ngForm">
+            <div class="row">
+                <div class="col-8">
+                    <mat-form-field class="cls" appearance="legacy">
+                        <mat-label>Ontologias</mat-label>
+                        <mat-select formControlName="ont" name="ontologie" multiple>
+                            <mat-option *ngFor="let ont of onts" [value]="ont">{{ont}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-4 b">
+                    <button class="cls " color="primary" mat-raised-button type="submit">
+                        <mat-icon mat-list-icon>search</mat-icon>Buscar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div *ngIf="tError" 
+    class="alert alert-danger">
+    No se encontro nada con el termino '{{term}}'
+</div>
+<div *ngIf="info.length>0" class="row">
+    <div class="col">
+        <app-term-resp [words]="arr"></app-term-resp>
+    </div>
+</div>

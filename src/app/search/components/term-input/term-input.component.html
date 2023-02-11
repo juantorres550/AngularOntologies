@@ -1,0 +1,14 @@
+<form (ngSubmit)="buscar()" autocomplete="off">
+    <mat-form-field class="i">
+        <mat-label>{{placeholder}}</mat-label>
+        <input matInput name="word" [(ngModel)]="word">
+        <!-- <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="opcionSeleccionada($event)">
+            <mat-option *ngFor="let info of data" [value]="info">
+                {{info}}
+            </mat-option>
+            <mat-option value="" *ngIf="data.length===0 && data.trim().length > 0">
+                No se encontro un termino {{termino}}
+            </mat-option>
+        </mat-autocomplete> -->
+    </mat-form-field>
+</form>

@@ -1,0 +1,17 @@
+<div>
+    <mat-toolbar class="nvb">
+        <span>Buscador</span>
+        <span class="example-spacer"></span>
+        <div>
+            <button 
+            *ngFor="let route of routes" 
+            mat-icon-button
+            [routerLink]="route.path" routerLinkActive="active" 
+            [routerLinkActiveOptions]="{exact: true}"
+            class="nv"
+            >
+                <mat-icon>{{route.name}}</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+</div>

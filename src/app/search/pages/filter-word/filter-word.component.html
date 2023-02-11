@@ -1,0 +1,21 @@
+<h2>Por término</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <app-term-input (onEnter)="buscar( $event )" placeholder="Buscar término...">
+        </app-term-input>
+    </div>
+</div>
+<div *ngIf="tError" class="alert alert-danger">
+    No se encontro nada con el termino '{{term}}'
+</div>
+<div *ngIf="infor.length>0" class="row">
+    <div class="col">
+        <mat-card *ngFor="let word of termsArray">
+            <mat-card-header>
+                <mat-card-title>Término: {{word.term}}</mat-card-title>
+                <mat-card-subtitle>Veces: {{word.abs_count}}</mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
+</div>

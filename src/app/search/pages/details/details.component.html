@@ -1,0 +1,22 @@
+<div class="container" *ngIf="show; else loading">
+    <h3><strong color="primary">Titulo: </strong> {{article.metadata.title}}</h3>
+    <!-- <h4>Autores: </h4> -->
+    <!-- <div *ngFor="let autor of autores">
+        <mat-divider></mat-divider>
+        <mat-list-item>{{autor}}</mat-list-item>
+        <mat-divider></mat-divider>
+    </div> -->
+    <mat-list>
+        <div mat-subheader>Autores</div>
+        <mat-list-item *ngFor="let autor of autores">
+            <mat-icon mat-list-icon>person</mat-icon>
+            <div mat-line>{{autor}}</div>
+        </mat-list-item>
+    </mat-list>
+    <h4><strong>Contenido:</strong> </h4>
+    <p *ngFor="let text of article.body_text">{{text.text}}</p>
+</div>
+
+<ng-template #loading>
+    <mat-spinner class="sp"></mat-spinner>
+</ng-template>

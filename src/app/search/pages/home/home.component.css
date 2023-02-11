@@ -1,0 +1,13 @@
+/* .hc{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100%;
+}
+.hc .group{
+    position: relative;
+    margin: 45px;
+} */
+.home{
+    text-align: center;
+}
